@@ -1,0 +1,6 @@
+{
+  "appId": "com.cocada.app",
+  "appName": "Cocada dos Sonhos",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
