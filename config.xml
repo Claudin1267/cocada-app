@@ -1,32 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cocada.app">
-
-    <!-- Permissões de GPS e Internet necessárias -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="Cocada Vendas"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
-        <activity
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-            android:name="com.cocada.app.MainActivity"
-            android:label="Cocada Vendas"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:launchMode="singleTask"
-            android:exported="true">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
-</manifest>
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.ionic.cocada" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Cocada dos Sonhos</name>
+    <description>App de vendas e rotas com GPS</description>
+    <author email="dev@cocada.local" href="https://cocada.local/">Claudin</author>
+    
+    <content src="index.html" />
+    
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    
+    <!-- iOS -->
+    <allow-intent href="itms:*" />
+    <allow-intent href="itms-apps:*" />
+    
+    <!-- Preferências -->
+    <preference name="ScrollEnabled" value="false" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="loadUrlTimeoutValue" value="70000" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="android-usesCleartextTraffic" value="true" />
+    <preference name="android-minSdkVersion" value="22" />
+    <preference name="android-targetSdkVersion" value="33" />
+    
+    <!-- Permissões Android - GPS/Localização -->
+    <permission name="android.permission.ACCESS_FINE_LOCATION" />
+    <permission name="android.permission.ACCESS_COARSE_LOCATION" />
+    
+    <!-- Permissões iOS - GPS/Localização -->
+    <preference name="NSLocationWhenInUseUsageDescription" value="Precisamos de sua localização para registrar vendas" />
+    <preference name="NSLocationAlwaysAndWhenInUseUsageDescription" value="Precisamos de sua localização para rastrear rotas" />
+    
+    <!-- Plataforma Android -->
+    <platform name="android">
+        <preference name="android-usesCleartextTraffic" value="true" />
+        <preference name="android-minSdkVersion" value="22" />
+        <preference name="android-targetSdkVersion" value="33" />
+        
+        <!-- Permissões necessárias -->
+        <config-file parent="/manifest" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        </config-file>
+    </platform>
+    
+    <!-- Plataforma iOS -->
+    <platform name="ios">
+        <preference name="deployment-target" value="11.0" />
+    </platform>
+</widget>
