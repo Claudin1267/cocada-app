@@ -4,6 +4,7 @@
   "description": "App de Vendas e Rotas",
   "main": "index.html",
   "dependencies": {
+    "@capacitor/android": "^5.0.0",
     "@capacitor/core": "^5.0.0",
     "@capacitor/geolocation": "^5.0.0"
   },
