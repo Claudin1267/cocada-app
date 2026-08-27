@@ -1,7 +1,13 @@
 {
   "name": "cocada-app",
   "version": "1.0.0",
+  "private": true,
   "main": "index.html",
+  "scripts": {
+    "prepare": "npx cap sync",
+    "cap:sync": "npx cap sync",
+    "cap:open:android": "npx cap open android"
+  },
   "dependencies": {
     "@capacitor/android": "^5.0.0",
     "@capacitor/core": "^5.0.0",
